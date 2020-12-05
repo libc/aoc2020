@@ -13,12 +13,12 @@ fn main() {
 
     println!("answer: {}", seats_in_the_file.iter().max().unwrap());
 
-    let all_seats: HashSet<u32> = (0..=127)
+    let all_seats: HashSet<u32> = (1..=127)
         .flat_map(|row| {
             [row]
                 .iter()
                 .cycle()
-                .zip(1..=7)
+                .zip(0..=7)
                 .map(|(row, col)| seat_id((*row, col)))
                 .collect::<Vec<u32>>()
         })
